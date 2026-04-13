@@ -1,0 +1,43 @@
+using System;
+
+namespace punto3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int opcion;
+
+            Console.WriteLine("--- SERVICIOS CLÍNICOS ---");
+            Console.WriteLine("1. Medicina General");
+            Console.WriteLine("2. pediatría");
+            Console.WriteLine("3. Odontología");
+            Console.WriteLine("4. salir");
+            Console.Write("Seleccione ua opción: ");
+            
+            opcion = int.Parse(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    Console.WriteLine("Has seleccionado: Medicina General.");
+                    Console.WriteLine("Costo: $50.000");
+                    break;
+                case 2:
+                    Console.WriteLine("Has seleccionado: Pediatría.");
+                    Console.WriteLine("Costo: $40.000");
+                    break;
+                case 3:
+                    Console.WriteLine("Has seleccionado: Odontología.");
+                    Console.WriteLine("Costo: $60.000");
+                    break;
+                case 4:
+                    Console.WriteLine("Salida del ssitema");
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida. intente de nuevo. ");
+                    break;
+            }
+        }
+    }
+}
