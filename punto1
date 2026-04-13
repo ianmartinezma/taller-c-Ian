@@ -1,0 +1,50 @@
+using System;
+
+namespace punto1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string nombre;
+            int edad;
+            double peso;
+            double estatura;
+            bool tieneSeguro;
+            string entradaSeguro;
+
+            Console.Write("Ingrese el nombre del paciente: ");
+            nombre = Console.ReadLine();
+
+            Console.Write("Ingrese la edad: ");
+            edad = int.Parse(Console.ReadLine());
+
+            Console.Write("Ingrese el peso (kg): ");
+            peso = double.Parse(Console.ReadLine());
+
+            Console.Write("Ingrese la estatura (m): ");
+            estatura = double.Parse(Console.ReadLine());
+
+            Console.Write("¿Tiene seguro? (S/N): ");
+            entradaSeguro = Console.ReadLine().ToUpper();
+            tieneSeguro = (entradaSeguro == "S");
+
+            double imc = peso / (estatura * estatura);
+
+            string estadoImc = "";
+            if (imc < 18.5) estadoImc = "Bajo peso";
+            else if (imc < 25) estadoImc = "Peso Normal";
+            else if (imc < 30) estadoImc = "Sobrepeso";
+            else estadoImc = "Obesidad";
+
+            Console.WriteLine("\n-------------------------------");
+            Console.WriteLine("  FICHA MÉDICA DEL PACIENTE");
+            Console.WriteLine("-------------------------------");
+            Console.WriteLine("Nombre: " + nombre);
+            Console.WriteLine("Edad: " + edad + " años");
+            Console.WriteLine("IMC: " + imc.ToString("F1") + " (" + estadoImc + ")");
+            Console.WriteLine("Seguro: " + (tieneSeguro ? "Sí" : "No"));
+            Console.WriteLine("-------------------------------");
+        }
+    }
+}
