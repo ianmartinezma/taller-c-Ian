@@ -1,0 +1,33 @@
+using System;
+
+namespace punto4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string nombreMedicamento;
+            int frecuencia;
+            int tomasTotales;
+
+            Console.Write("ingrese el nombre del medicamento: ");
+            nombreMedicamento = Console.ReadLine();
+
+            Console.Write("¿Cada cuántas horas debe tomarlo?: ");
+            frecuencia = int.Parse(Console.ReadLine());
+
+            Console.Write("Cuántas tomas totales debe realizar?: ");
+            tomasTotales = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\n--- cRONOGRAMA DE MEDICACIÓN: " + nombreMedicamento + " ---");
+
+            for (int i = 1; i <= tomasTotales; i++)
+            {
+                int horaProxima = (i - 1) * frecuencia;
+                Console.WriteLine("Toma #" + i + ": A las " + horaProxima + " horas desde el inicio.");
+            }
+
+            Console.WriteLine("-----------------------------------------");
+        }
+    }
+}
