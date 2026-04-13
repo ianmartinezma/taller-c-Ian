@@ -1,0 +1,37 @@
+using System;
+
+namespace punto2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double temperatura;
+            int presionSistolica;
+
+            Console.Write("Ingrese la temperatura corporal (°C): ");
+            temperatura = double.Parse(Console.ReadLine());
+
+            Console.Write("Ingrese la presión arterial sistólica (mmHg): ");
+            presionSistolica = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\n--- RESULTADO DEL TRIAJE ---");
+
+            if (temperatura > 39 || presionSistolica > 160)
+            {
+                Console.WriteLine("Prioridad: NIVEL 1 (Emergencia)");
+                Console.WriteLine("Acción: Atención inmediata.");
+            }
+            else if (temperatura > 37.5 || presionSistolica > 140)
+            {
+                Console.WriteLine("Prioridad: NIVEL 2 (Urgencia)");
+                Console.WriteLine("Acción: Atención en menos de 30 minutos.");
+            }
+            else
+            {
+                Console.WriteLine("Prioridad: NIVEL 3 (Prioridad Menor)");
+                Console.WriteLine("Acción: Remisión a consulta externa o espera.");
+            }
+        }
+    }
+}
